@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Lavamatic TropezÃ³n{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'webinfo/css/styles.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <div class="logo">
+                <!-- Si tenÃ©s el logo en static/webinfo/img/logo.png -->
+                <img src="{% static 'webinfo/img/logo.png' %}" alt="Lavamatic Tropezón" class="logo-img">
+                <div class="logo-text-wrap">
+                    <span class="logo-text-main">Lavamatic Tropezón</span>
+                    <span class="logo-text-sub">Lavandería & Tintorería</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#ubicacion">Ubicación</a>
+                <a href="#opiniones">Opiniones</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© {% now "Y" %} Lavamatic Tropezón. Todos los derechos reservados.</p>
+            <p class="footer-note">Servicio de lavandería profesional. Proximamente tienda online y pagos con Mercado Pago.</p>
+        </div>
+    </footer>
+
+ <!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/5491123875577?text=Hola%20Lavamatic%20Tropezon%2C%20quiero%20hacer%20una%20consulta"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp Lavamatic Tropezón">
+
+    <!-- Ícono SVG oficial de WhatsApp -->
+    <svg class="whatsapp-svg" viewBox="0 0 32 32">
+        <path fill="#ffffff" d="M19.11 17.69c-.32-.16-1.9-.94-2.2-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.28-.19.21-.38.24-.7.08-.32-.16-1.32-.49-2.51-1.56-.93-.83-1.56-1.86-1.74-2.18-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.56-.08-.16-.74-1.78-1.01-2.45-.27-.65-.54-.56-.74-.57-.19-.01-.4-.01-.62-.01-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.71 0 1.61 1.17 3.17 1.33 3.39.16.22 2.3 3.51 5.63 4.92 3.32 1.41 3.32.94 3.93.88.6-.05 1.9-.77 2.17-1.51.27-.73.27-1.35.19-1.51-.08-.16-.3-.24-.62-.4z"/>
+        <path fill="#ffffff" d="M16.01 2.95c-7.17 0-12.98 5.81-12.98 12.98 0 2.29.6 4.55 1.73 6.56l-1.83 6.68 6.84-1.79c1.92 1.05 4.09 1.61 6.3 1.61h.01c7.17 0 12.98-5.81 12.98-12.98 0-3.46-1.35-6.71-3.81-9.17-2.45-2.45-5.7-3.89-9.24-3.89zM16 26.65h-.01c-2.03 0-4.02-.55-5.76-1.6l-.41-.24-4.06 1.06 1.08-3.94-.26-.41c-1.06-1.74-1.62-3.74-1.62-5.79 0-6.08 4.95-11.03 11.03-11.03 2.94 0 5.7 1.15 7.78 3.22 2.08 2.08 3.22 4.84 3.22 7.78 0 6.08-4.95 11.03-11.03 11.03z"/>
+    </svg>
+
+</a>
+
+</body>
+</html>
+

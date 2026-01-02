@@ -1,0 +1,226 @@
+{% extends "webinfo/base.html" %}
+
+{% block title %}Lavamatic Tropezón | Lavandería en tu barrio{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<section id="inicio" class="hero hero-lavadero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>Lavado, secado y planchado profesional para tu día a día</h1>
+            <p>
+                En Lavamatic Tropezón cuidamos tu ropa como si fuera nuestra.
+                Servicio rápido, prolijo y confiable para familias, comercios y emprendedores.
+            </p>
+            <div class="hero-actions">
+                <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+                <a href="https://wa.me/5491123875577?text=Hola%20Lavamatic%20Tropezón%2C%20quiero%20pedir%20un%20presupuesto"
+                   class="btn btn-outline"
+                   target="_blank">
+                    Escribinos por WhatsApp
+                </a>
+            </div>
+            <p class="hero-note">
+                ¡ Retiro y entrega a coordinar por WhatsApp. Consultar por horarios. !
+            </p>
+        </div>
+        <div class="hero-card">
+            <h2>¿Por qué elegirnos?</h2>
+            <ul>
+                <li>✨ Cuidamos tu ropa como si fuera nuestra</li>
+                <li>🧼 Productos de calidad</li>
+                <li>🛏️ Especialistas en acolchados y textiles grandes</li>
+                <li>👶 Higienización profunda para carritos de bebés</li>
+                <li>🎩 Tintorería profesional para prendas delicadas</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="servicios" class="section">
+    <div class="container">
+        <h2 class="section-title">Nuestros servicios</h2>
+        <p class="section-subtitle">
+            Soluciones completas para tu ropa de todos los días, prendas especiales y textiles del hogar.
+        </p>
+       <div class="grid">
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/lavado.jpg' %}"
+             alt="Lavado por cajón"
+             class="service-img">
+        <h3>Lavado por cajón</h3>
+        <p>Lavado con productos de calidad, clasificación por color y tipo de prenda. Incluye jabón y suavizante.</p>
+    </article>
+
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/secado.jpg' %}"
+             alt="Secado en máquinas industriales"
+             class="service-img">
+        <h3>Secado en máquinas industriales</h3>
+        <p>Secado rápido, ideal para días de lluvia o cuando necesitás tu ropa lista el mismo día.</p>
+    </article>
+
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/planchado.jpg' %}"
+             alt="Planchado"
+             class="service-img">
+        <h3>Planchado</h3>
+        <p>Planchado prolijo de camisas, pantalones, remeras y más. Opciones por prenda o paquetes.</p>
+    </article>
+
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/acolchados.jpg' %}"
+             alt="Acolchados y frazadas"
+             class="service-img">
+        <h3>Acolchados y frazadas</h3>
+        <p>Lavado de acolchados, frazadas y mantas de gran tamaño, con cuidado especial y buen secado.</p>
+    </article>
+
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/carritos.jpg' %}"
+             alt="Carritos de bebés y sillas de auto"
+             class="service-img">
+        <h3>Carritos de bebés y sillas de auto</h3>
+        <p>Limpieza profunda de textiles y fundas, ideal para mantener todo higienizado para los más chicos.</p>
+    </article>
+
+    <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/tintoreria.jpg' %}"
+             alt="Tintorería"
+             class="service-img">
+        <h3>Tintorería</h3>
+        <p>Servicio de Tintorería para trajes, vestidos y prendas delicadas. Consultar por tiempos y precios.</p>
+    </article>
+   <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/personal.jpg' %}"
+             alt="Personal"
+             class="service-img">
+        <h3>Personal</h3>
+        <p>Por sobre todas las cosas...nada mas lindo que te atiendan estas personas.</p>
+    </article>
+       <article class="card service-card">
+        <img src="{% static 'webinfo/img/servicios/empresas.jpg' %}"
+             alt="Empresas y comercio"
+             class="service-img">
+        <h3>Empresas & Comercios</h3>
+        <p>Lavado, secado, planchado, doblado y retiro/entrega con tarifas especiales por volumen.</p>
+    </article>
+</div>
+    </div>
+</section>
+
+<section id="ubicacion" class="section section-alt">
+    <div class="container two-columns">
+        <div>
+            <h2 class="section-title">Dónde estamos</h2>
+            <p class="section-subtitle">
+                Acercate a nuestro local o escribinos por WhatsApp para coordinar retiro y entrega.
+            </p>
+            <!-- Lugar para el mapa -->
+            <div class="map-box">
+                <!-- Mapa embed real -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.549400315155!2d-58.560025624525316!3d-34.59026645678748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb82b023652df%3A0x4b7e46d086ff1b4e!2sLavamatic!5e0!3m2!1ses!2sar!4v1764642363702!5m2!1ses!2sar"
+                    width="100%" 
+                    height="260"
+                    style="border:0; border-radius:12px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+<div class="map-btn-container">
+    <a class="btn map-go-btn"
+       href="https://www.google.com/maps/dir/?api=1&destination=Lavamatic,+Buenos+Aires"
+       target="_blank">
+
+        <!-- Ícono de ubicación SVG -->
+        <svg class="map-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12.75C13.2426 12.75 14.25 11.7426 14.25 10.5C14.25 9.25736 13.2426 8.25 12 8.25C10.7574 8.25 9.75 9.25736 9.75 10.5C9.75 11.7426 10.7574 12.75 12 12.75Z"
+                  stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.5 10.5C19.5 16.1487 12 21 12 21C12 21 4.5 16.1487 4.5 10.5C4.5 6.35786 7.85786 3 12 3C16.1421 3 19.5 6.35786 19.5 10.5Z"
+                  stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        Cómo llegar
+    </a>
+</div>
+
+            </div>
+        </div>
+       <div id="opiniones" class="reviews-box">
+    <h2 class="section-title">Reseñas de Google</h2>
+    <p class="section-subtitle">
+        Nuestros clientes nos recomiendan por la calidad, el trato y la rapidez del servicio.
+    </p>
+
+    <!-- Widget real de Google Reviews (Elfsight) -->
+    <div class="reviews-widget">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-4e3d0b99-366f-475f-ae6b-c358bfc2aec9" data-elfsight-app-lazy></div>
+    </div>
+
+</div>
+
+    </div>
+</section>
+
+<section id="contacto" class="section">
+    <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">
+            Escribinos para coordinar un servicio, pedir un presupuesto o consultar por retiros a domicilio.
+        </p>
+        <div class="two-columns">
+            <!-- Tarjeta de contacto -->
+            <div class="contact-card">
+                <h3>Datos de contacto</h3>
+                <ul class="contact-list">
+                    <li><strong>WhatsApp:</strong> +54 9 11 2387-5577</li>
+                    <li><strong>Dirección:</strong> av.1 de mayo 5878, Villa Lynch, Buenos Aires</li>
+                    <li><strong>Horarios:</strong> Lun a Vie 9 a 17 hs Y Sáb 9 a 13 hs</li>
+                </ul>
+                <a href="https://wa.me/5491123875577?text=Hola%20Lavamatic%20Tropezón%2C%20quiero%20consultar%20por%20el%20servicio"
+                   class="btn btn-primary"
+                   target="_blank">
+                    Escribir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Formulario (demo, sin backend) -->
+            
+            <form class="contact-form" method="POST" action="#contacto">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="id_nombre">Nombre</label>
+                    {{ form.nombre }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_email">Correo electrónico</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_mensaje">Mensaje</label>
+                    {{ form.mensaje }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+
+                {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+            </form>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
