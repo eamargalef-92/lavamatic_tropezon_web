@@ -23,10 +23,8 @@ DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 # Hosts permitidos (Render)
 # En local, si DEBUG=True no molesta si está vacío.
-ALLOWED_HOSTS = [
-    "lavamatic-tropezon-web.onrender.com",
-    "www.lavamatic-tropezon-web.onrender.com",
-]
+ALLOWED_HOSTS = ["*"]
+
 if not DEBUG:
     # Ejemplo: "lavamatic-tropezon-web.onrender.com"
     # Si querés varios: "dom1.com,dom2.com"
