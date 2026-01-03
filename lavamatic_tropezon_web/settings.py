@@ -12,24 +12,34 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # =========================
-# SECURITY
+# SECURITY / ENV
 # =========================
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
     "django-insecure-dev-only-change-in-production"
 )
 
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = os.environ.get("DEBUG", "True").strip().lower() in ("true", "1", "yes")
 
 
 # =========================
-# ALLOWED HOSTS (RENDER FIX)
+# HOSTS (RENDER / LOCAL)
 # =========================
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
-    CSRF_TRUSTED_ORIGINS = [f"https://{RENDER_EXTERNAL_HOSTNAME}"]
+    # Render setea RENDER_EXTERNAL_HOSTNAME = "tu-app.onrender.com"
+    ALLOWED_HOSTS = [
+        RENDER_EXTERNAL_HOSTNAME,
+        ".onrender.com",
+    ]
+
+    CSRF_TRUSTED_ORIGINS = [
+        f"https://{RENDER_EXTERNAL_HOSTNAME}",
+    ]
+
+    # Render termina TLS en su proxy; Django debe saber que la request original fue HTTPS
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 else:
     ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -44,7 +54,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "webinfo",
 ]
 
@@ -106,18 +115,10 @@ DATABASES = {
 # PASSWORD VALIDATION
 # =========================
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 
@@ -131,12 +132,12 @@ USE_TZ = True
 
 
 # =========================
-# STATIC FILES (MUY IMPORTANTE)
+# STATIC FILES
 # =========================
 STATIC_URL = "/static/"
-
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# WhiteNoise storage (cache + hash)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
